@@ -1,56 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>InternLink</title>
-  <link rel="stylesheet" href="css/Style.css" />
-  <link rel="stylesheet" href="css/loading.css" />
-  <link rel="stylesheet" href="css/welcome.css" />
-</head>
-<body>
-  <!-- Loading overlay -->
-  <div id="loading-overlay" class="loading-overlay" aria-hidden="true">
-    <div class="loading-card" role="status" aria-live="polite">
-      <div class="ring ring-1"></div>
-      <div class="ring ring-2"></div>
-      <img src="logo/logoInternLink.png" alt="InternLink" class="loading-logo" />
-      <div class="spinner" aria-hidden="true"></div>
-      <div class="loading-text" id="loading-text">Loading...</div>
-      <div class="loading-bar" aria-hidden="true">
-        <div class="loading-progress" id="loading-progress" style="width:0%"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Hero -->
-  <div id="hero" class="hero">
-    <div class="hero-bg" id="hero-bg">
-      <div class="blob blob-a"></div>
-      <div class="blob blob-b"></div>
-      <div class="blob blob-c"></div>
-    </div>
-
-    <header class="hero-content" role="banner" id="hero-content">
-      <div class="hero-inner">
-        <div class="logo" aria-hidden="true">
-          <img src="logo/logoInternLink.png" alt="InternLink" />
-        </div>
-
-        <div class="text-block" role="region" aria-label="Welcome message">
-          <h1 class="welcome-title">Welcome to InternLink</h1>
-          <p class="welcome-sub">Find internships, connect with employers, and grow your career.</p>
-        </div>
-
-        <nav class="buttcon" role="navigation" aria-label="Primary actions">
-          <button class="btn btn-ghost loading-link" data-href="loginform.html" aria-label="Login">Login</button>
-          <button class="btn btn-primary loading-link" data-href="registerform.html" aria-label="Register">Register</button>
-        </nav>
-      </div>
-    </header>
-  </div>
-
-  <script src="js/welcome-bg.js"></script>
-  <script src="js/loading.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="css/Style.css" />
+	</head>
+	<body>
+		<div class="MainContainer">
+			<div class="logo"><img src="logo/logoInternLink.png" alt="" /></div>
+			<h1 class="Welcome">Welcome to InternLink</h1>
+			<div class="buttcon">
+				<button class="log" onclick="window.location.href='loginform.html'">
+					Login
+				</button>
+				<br /><br />
+				<button
+					class="reg"
+					onclick="window.location.href='registerform.html'">
+					Register
+				</button>
+			</div>
+		</div>
+	</body>
 </html>
