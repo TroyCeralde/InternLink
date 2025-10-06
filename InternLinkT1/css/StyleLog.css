@@ -9,43 +9,46 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	z-index: 1000;
+	z-index: 10000;
 }
 .popup-box {
-	background: #989899;
-	color: #fff;
-	padding: 30px 40px;
-	border-radius: 16px;
-	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+	background: rgba(152, 152, 153, 0.98);
+	color: #072129;
+	padding: 28px 36px;
+	border-radius: 14px;
+	box-shadow: 0 8px 40px rgba(2, 6, 10, 0.18);
 	text-align: center;
 	min-width: 260px;
 }
 .popup-message {
 	display: block;
-	margin-bottom: 18px;
-	font-size: 1.1rem;
+	margin-bottom: 14px;
+	font-size: 1.05rem;
+	color: #072129;
 }
 .popup-close {
-	background: #2ee59d;
-	color: #fff;
+	background: linear-gradient(90deg,#1fceff,#2ee59d);
+	color: #072129;
 	border: none;
-	border-radius: 8px;
-	padding: 8px 24px;
+	border-radius: 10px;
+	padding: 8px 22px;
 	font-size: 1rem;
 	cursor: pointer;
-	transition: background 0.2s;
+	transition: transform 0.12s ease;
 }
-.popup-close:hover {
-	background: #25c98a;
-}
+.popup-close:hover { transform: translateY(-2px); }
 
+/* keep body transparent so Background.css controls the page background */
 body {
 	margin: 0;
 	padding: 0;
-	background: #c5c5c5;
+	background: transparent;
 	font-family: "Segoe UI", Arial, sans-serif;
+	min-height: 100vh;
+	color: #ffffff;
 }
 
+/* layout container */
 .container {
 	display: flex;
 	justify-content: space-between;
@@ -55,76 +58,74 @@ body {
 	box-sizing: border-box;
 }
 
+/* Left panel modernized (removed red borders) */
 .left-panel {
-	background: #929292;
+	background: rgba(146, 146, 146, 0.9);
 	border-radius: 20px;
 	padding: 30px 30px 20px 30px;
 	width: 50%;
-	min-width: 340px;
+	min-width: 320px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	margin-right: 30px;
 	box-sizing: border-box;
 	min-height: 700px;
-	border: #f70303 solid 2px;
+	box-shadow: 0 8px 30px rgba(16, 24, 32, 0.12);
 }
 
+/* Logo/title */
 .logo-title {
 	display: flex;
 	align-items: center;
-	margin-bottom: 30px;
-	border: #f70303 solid 2px;
+	margin-bottom: 24px;
 }
-
 .logo-img {
-	width: 80px;
-	height: 80px;
+	width: 88px;
+	height: 88px;
 	border-radius: 50%;
 	background: #fff;
 	padding: 10px;
-	margin-right: 20px;
+	margin-right: 18px;
 	box-sizing: border-box;
+	box-shadow: 0 10px 30px rgba(16, 24, 32, 0.12);
 }
-
 .logo-text {
-	color: #fff;
-	font-size: 2.5rem;
-	font-weight: bold;
-	border: #f70303 solid 2px;
+	color: #ffffff;
+	font-size: 2rem;
+	font-weight: 700;
 }
 
+/* description */
 .description {
-	color: #fff;
-	font-size: 1.1rem;
-	font-weight: bold;
+	color: rgba(255, 255, 255, 0.95);
+	font-size: 1.05rem;
+	font-weight: 600;
 	margin-top: 10px;
-	border: #f70303 solid 2px;
 }
-/*RegisterContainer*/ /* */
+
+/* Right panel modernized */
 .right-panel {
-	background: #9b9b9c;
+	background: rgba(155, 155, 156, 0.95);
 	border-radius: 20px;
 	padding: 35px 40px 25px 40px;
-	width: 30%;
-	min-width: 370px;
-	border: #f70303 solid 2px;
-	left: -9%;
-	top: 20%;
+	width: 34%;
+	min-width: 360px;
 	position: relative;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	box-shadow: 0 10px 40px rgba(8, 12, 16, 0.12);
 }
 
+/* Titles & form */
 .register-title {
-	color: #fff;
-	font-size: 1.5rem;
-	font-weight: bold;
-	margin-bottom: 25px;
+	color: #072129;
+	font-size: 1.4rem;
+	font-weight: 800;
+	margin-bottom: 22px;
 	text-align: center;
-	border: #f70303 solid 2px;
 }
 
 .register-form {
@@ -134,69 +135,67 @@ body {
 	gap: 15px 15px;
 	justify-content: space-between;
 	margin-bottom: 20px;
-	border: 1px solid #f70303;
 }
 
 .register-form input {
 	width: 48%;
-	padding: 10px 12px;
-	border-radius: 8px;
-	border: none;
-	background: #f2f4f8;
+	padding: 12px 14px;
+	border-radius: 10px;
+	border: 1px solid rgba(2, 6, 10, 0.06);
+	background: #eef2f6;
 	font-size: 1rem;
 	margin-bottom: 0;
 	box-sizing: border-box;
+	color: #072129;
 }
 
 .register-form input[type="password"] {
 	font-family: inherit;
 }
 
+/* Login-specific stacking */
 .login-form-specific {
-	flex-direction: column; /* Stack items vertically */
-	flex-wrap: nowrap; /* Prevent items from wrapping */
-	justify-content: flex-start; /* Align items to the start of the main axis (vertical) */
-	gap: 15px 0; /* Apply only vertical gap between items */
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	gap: 15px 0;
+	width: 100%;
 }
 
 .login-form-specific input {
-	width: 80%; /* Make inputs "a little long" */
+	width: 100%;
 	height: 45px;
-	margin: 0 auto; /* Center inputs horizontally within the form */
+	margin: 0;
 }
 
+/* Button styling */
 .register-btn {
-	width: 50%;
-	position: relative;
-	left: 25%;
+	width: 100%;
 	padding: 12px 0;
-	background: #2ee59d;
-	color: #fff;
+	background: linear-gradient(90deg,#1fceff,#2ee59d);
+	color: #072129;
 	border: none;
-	border-radius: 20px;
-	font-size: 1.1rem;
-	font-weight: bold;
+	border-radius: 12px;
+	font-size: 1.05rem;
+	font-weight: 800;
 	cursor: pointer;
-	margin-top: 10px;
-	transition: background 0.2s;
+	margin-top: 8px;
+	box-shadow: 0 8px 24px rgba(47, 211, 171, 0.12);
+	transition: transform .12s ease, box-shadow .12s ease;
 }
-
-.register-btn:hover {
-	background: #25c98a;
-}
+.register-btn:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(47,211,171,0.18); }
 
 .login-link {
 	margin-top: 10px;
 	font-size: 0.95rem;
-	color: #fff;
+	color: #ffffff;
 	text-align: center;
-	border: #f70303 solid 2px;
 }
 
 .login-link a {
-	color: #00ff99;
+	color: #dfffe9;
 	text-decoration: none;
-	font-weight: 500;
+	font-weight: 600;
 	font-size: 0.95rem;
 }
 
@@ -204,14 +203,117 @@ body {
 	text-decoration: underline;
 }
 
+/* Field staggered entrance (register/login) */
+.register-form .field {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fieldIn .56s cubic-bezier(.2,.9,.3,1) forwards;
+}
+.register-form .field:nth-child(1) { animation-delay: .06s; }
+.register-form .field:nth-child(2) { animation-delay: .12s; }
+.register-form .field:nth-child(3) { animation-delay: .18s; }
+.register-form .field:nth-child(4) { animation-delay: .24s; }
+.register-form .field:nth-child(5) { animation-delay: .30s; }
+.register-form .field:nth-child(6) { animation-delay: .36s; }
+.register-form .field:nth-child(7) { animation-delay: .42s; }
+.register-form .field:nth-child(8) { animation-delay: .48s; }
+.register-form .field:nth-child(9) { animation-delay: .54s; }
+
+@keyframes fieldIn { to { opacity: 1; transform: translateY(0); } }
+
+/* Add-only: subtle typing / focus glow and button micro-interactions
+   — no layout or box-size changes, only visual/animation overlays */
+
+/* soft pulse when input is focused */
+@keyframes inputPulse {
+  0%   { box-shadow: 0 6px 20px rgba(31,206,255,0.04); }
+  50%  { box-shadow: 0 18px 44px rgba(31,206,255,0.10); }
+  100% { box-shadow: 0 6px 20px rgba(31,206,255,0.04); }
+}
+
+/* apply glow on focus (non-layout) */
+.register-form input:focus,
+.login-form-specific input:focus {
+  outline: none;
+  border-color: rgba(31,206,255,0.44); /* keep existing border widths */
+  animation: inputPulse 1.6s ease-in-out infinite;
+  transform: translateY(-1px);
+  transition: box-shadow .18s ease, border-color .12s ease, transform .12s ease;
+}
+
+/* show a subtle persistent glow when input has content (no layout change) */
+.register-form input:not(:placeholder-shown),
+.login-form-specific input:not(:placeholder-shown) {
+  box-shadow: 0 10px 30px rgba(31,206,255,0.06);
+  border-color: rgba(31,206,255,0.28);
+}
+
+/* field underline (focus-within) — purely decorative */
+.field {
+  position: relative; /* should already exist; safe if present */
+}
+.field::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 8px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(31,206,255,0), rgba(31,206,255,0.9), rgba(31,206,255,0));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .28s cubic-bezier(.2,.9,.3,1), opacity .28s;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 2px;
+}
+.field:focus-within::after {
+  transform: scaleX(1);
+  opacity: .95;
+  animation: inputPulse 1.6s ease-in-out infinite;
+}
+
+/* button: subtle hover lift and sweep (no size change) */
+.register-btn {
+  position: relative;
+  overflow: hidden;
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+  will-change: transform, box-shadow;
+}
+.register-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 48px rgba(47,211,171,0.14);
+}
+
+/* hover sweep */
+.register-btn::before {
+  content: "";
+  position: absolute;
+  left: -40%;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.36), rgba(255,255,255,0.06));
+  transform: skewX(-18deg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .12s ease;
+}
+.register-btn:hover::before {
+  animation: btnSweep .9s ease-in-out 1;
+  opacity: 1;
+}
+@keyframes btnSweep {
+  0%   { left: -40%; opacity: 0; }
+  20%  { opacity: .95; }
+  100% { left: 140%; opacity: 0; }
+}
+
+/* responsive */
 @media (max-width: 1400px) {
 	.register-form input,
 	.register-form input[type="date"] {
 		width: 100%;
-	}
-	.register-btn {
-		width: 50%; /* Make button full width */
-		left: 25%;
 	}
 }
 
@@ -219,7 +321,7 @@ body {
 	.container {
 		flex-direction: column;
 		align-items: center;
-		padding: 10px;
+		padding: 12px;
 	}
 	.left-panel,
 	.right-panel {
@@ -228,22 +330,24 @@ body {
 		margin: 10px 0;
 	}
 	.right-panel {
-		left: 0; /* Reset left position for mobile */
-		top: 0; /* Reset top position for mobile */
-		position: static; /* Reset position for mobile */
+		position: static;
 	}
 	.register-form {
-		flex-direction: column; /* Explicitly stack items vertically */
-		flex-wrap: nowrap; /* Prevent wrapping if not needed */
-		justify-content: flex-start; /* Align items to the start */
-		gap: 15px 0; /* Only vertical gap needed */
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		gap: 15px 0;
 	}
 	.register-form input,
 	.register-form input[type="date"] {
-		width: 100%; /* Make inputs full width in mobile view */
+		width: 100%;
 	}
-	.register-btn {
-		width: 50%; /* Make button full width in mobile view */
-		left: 0; /* Reset left position for mobile */
-	}
+}
+@media (max-width: 900px) {
+    .register-form .field { animation: none; opacity: 1; transform: none; }
+    .register-form input, .login-form-specific input { height: 48px; }
+    .register-btn { height: 48px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
 }

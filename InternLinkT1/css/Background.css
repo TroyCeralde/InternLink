@@ -1,0 +1,122 @@
+/* Shared decorative background with logo watermark + literal page text */
+
+/* base gradient */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    color: #ffffff;
+    background: linear-gradient(135deg, #84a0bd 0%, #5a6b7a 55%, #393f45 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* soft abstract glows */
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    filter: blur(56px);
+    opacity: 0.12;
+    z-index: 0;
+}
+
+body::before {
+    width: 740px;
+    height: 740px;
+    right: -200px;
+    top: -160px;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(31,206,255,0.95) 0%, rgba(31,206,255,0) 45%),
+        radial-gradient(circle at 70% 70%, rgba(46,229,157,0.85) 0%, rgba(46,229,157,0) 40%);
+    transform: rotate(12deg);
+}
+
+body::after {
+    width: 560px;
+    height: 560px;
+    left: -180px;
+    bottom: -140px;
+    background:
+        radial-gradient(circle at 40% 40%, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 45%),
+        radial-gradient(circle at 80% 80%, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0) 40%);
+    mix-blend-mode: overlay;
+}
+
+/* logo watermark: uses your project logo. Path is relative to css/Background.css => ../logo/logoInternLink.png */
+body::mid {
+    /* placeholder to keep specificity distinct */
+}
+
+/* large faint logo image on the right */
+body::before {
+    /* keep the glow plus add logo using extra layer */
+    background-image:
+        url("../logo/logoInternLink.png"),
+        radial-gradient(circle at 30% 30%, rgba(31,206,255,0.95) 0%, rgba(31,206,255,0) 45%),
+        radial-gradient(circle at 70% 70%, rgba(46,229,157,0.85) 0%, rgba(46,229,157,0) 40%);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10%) 50%, center, center;
+    background-size: 58vh, cover, cover;
+    opacity: 0.06;
+    filter: blur(0.8px) saturate(120%);
+}
+
+/* page literal watermark text (LOGIN / REGISTER) */
+body.page-login::after,
+body.page-register::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    left: 50%;
+    top: 52%;
+    transform: translate(-8%, -50%) rotate(-14deg);
+    white-space: nowrap;
+    color: #ffffff;
+    opacity: 0.04;
+    letter-spacing: 18px;
+    font-weight: 900;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+body.page-login::after {
+    content: "Login";
+    font-size: clamp(80px, 12vw, 220px);
+}
+
+body.page-register::after {
+    content: "Register";
+    font-size: clamp(80px, 12vw, 220px);
+}
+
+/* ensure content sits above the watermark */
+.container {
+    position: relative;
+    z-index: 3;
+}
+
+/* panels remain readable */
+.left-panel,
+.right-panel {
+    position: relative;
+    z-index: 4;
+    backdrop-filter: blur(6px);
+}
+
+/* make popup appear above everything */
+.popup-overlay { z-index: 9999; }
+
+/* responsive tuning */
+@media (max-width: 900px) {
+    body::before,
+    body::after {
+        opacity: 0.09;
+        filter: blur(48px);
+    }
+    body.page-login::after,
+    body.page-register::after { display: none; }
+}
