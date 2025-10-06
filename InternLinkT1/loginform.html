@@ -1,52 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Register - InternLink</title>
-        <link rel="stylesheet" href="css/StyleLog.css" />
-        <link rel="stylesheet" href="css/Background.css" />
-    </head>
-    <body class="page-login">
-        <div class="container">
-            <div class="left-panel">
-                <div class="logo-title">
-                    <img
-                        src="logo/logoInternLink.png"
-                        alt="InternLink Logo"
-                        class="logo-img" />
-                    <span class="logo-text">InternLink</span>
-                </div>
-                <div class="description">InternLink is a blablabla</div>
-            </div>
-            <div class="right-panel">
-                <h2 class="register-title">Login</h2>
-                <form
-                    class="register-form login-form-specific"
-                    action="php/login.php"
-                    method="POST">
-                    <input type="email" name="email" placeholder="Email" required />
-                    <input
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                        required />
-                    <button class="register-btn" type="submit">Login</button>
-                </form>
-                <div class="login-link">
-                    Don't have an account?
-                    <a href="registerform.html">Register here</a>
-                </div>
-            </div>
-        </div>
-        <div id="popup" class="popup-overlay" style="display: none">
-            <div class="popup-box">
-                <span class="popup-message" id="popup-message"></span>
-                <button class="popup-close" type="button" onclick="closePopup()">
-                    OK
-                </button>
-            </div>
-        </div>
-        <script src="js/LogPopUp.js"></script>
-    </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login - InternLink</title>
+  <link rel="stylesheet" href="css/StyleLog.css" />
+  <link rel="stylesheet" href="css/Background.css" />
+</head>
+<body class="page-login">
+  <div class="container">
+    <div class="left-panel">
+      <div class="logo-title">
+        <img src="logo/logoInternLink.png" alt="InternLink Logo" class="logo-img" />
+        <span class="logo-text">InternLink</span>
+      </div>
+      <p class="description">Connect students and employers — discover opportunities and grow your career.</p>
+    </div>
+
+    <aside class="right-panel">
+      <div class="card">
+        <h2 class="card-title">Welcome back</h2>
+        <form class="form-grid login-form" action="php/login.php" method="POST" autocomplete="on" novalidate>
+          <div class="form-field"><input type="email" name="email" placeholder="Email" required /></div>
+          <div class="form-field"><input type="password" name="password" placeholder="Password" required /></div>
+          <div class="form-actions">
+            <button class="cta" type="submit">Sign in</button>
+            <a class="muted-link" href="registerform.html">Create account</a>
+          </div>
+        </form>
+      </div>
+    </aside>
+  </div>
+</body>
 </html>
