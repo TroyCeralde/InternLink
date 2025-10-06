@@ -1,0 +1,142 @@
+* {
+	font-family: "Segoe UI", Arial, sans-serif;
+}
+body {
+	background-color: rgb(167, 167, 167);
+}
+.MainContainer {
+	border-style: solid;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	height: 450px;
+	width: 450px;
+	left: 50%;
+	top: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	background-color: rgb(216, 216, 216);
+}
+.Welcome {
+	text-align: center;
+	align-self: center;
+	font-size: 30px;
+	margin-top: 20px;
+	width: 400px;
+
+	font-weight: 700;
+	font-size: 35px;
+	top: 47%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+}
+.logo {
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 160px;
+	height: 160px;
+	position: absolute;
+	border: 1px solid black;
+	border-radius: 50%;
+	top: 24%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.logo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+.buttcon {
+	position: absolute;
+	height: auto;
+	align-items: center;
+	top: 75%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+button {
+	width: 200px;
+	height: 50px;
+	font-size: larger;
+	font-weight: 700;
+	color: white;
+	border-radius: 30px;
+	/* Reverted: Removed cursor: pointer; and transition properties */
+}
+
+.log {
+	background-color: rgb(72, 97, 235);
+}
+
+/* Reverted: Removed .log:hover styles */
+
+.reg {
+	background-color: rgb(64, 255, 64);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+	.MainContainer {
+		width: 90%; /* Adjust width for smaller screens */
+		height: 400px; /* Adjust height */
+		/* Removed: border-width: 1px; */
+	}
+
+	.Welcome {
+		font-size: 28px; /* Smaller font size */
+		width: 80%; /* Adjust width */
+		top: 45%; /* Adjust vertical position */
+	}
+
+	.logo {
+		width: 120px; /* Smaller logo */
+		height: 120px;
+		top: 20%; /* Adjust vertical position */
+	}
+
+	.buttcon {
+		top: 78%; /* Adjust vertical position */
+	}
+
+	button {
+		width: 180px; /* Smaller buttons */
+		height: 45px;
+		font-size: medium; /* Smaller font size */
+	}
+}
+
+@media (max-width: 400px) {
+	.MainContainer {
+		width: 95%;
+		height: 350px;
+	}
+
+	.Welcome {
+		font-size: 24px;
+		top: 40%;
+	}
+
+	.logo {
+		width: 100px;
+		height: 100px;
+		top: 18%;
+	}
+
+	.buttcon {
+		top: 75%;
+	}
+
+	button {
+		width: 150px;
+		height: 40px;
+		font-size: small;
+	}
+}

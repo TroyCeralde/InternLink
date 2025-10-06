@@ -1,0 +1,249 @@
+/* Popup styles for loginform.html */
+.popup-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.4);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+}
+.popup-box {
+	background: #989899;
+	color: #fff;
+	padding: 30px 40px;
+	border-radius: 16px;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	min-width: 260px;
+}
+.popup-message {
+	display: block;
+	margin-bottom: 18px;
+	font-size: 1.1rem;
+}
+.popup-close {
+	background: #2ee59d;
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	padding: 8px 24px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+.popup-close:hover {
+	background: #25c98a;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #c5c5c5;
+	font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	height: 97vh;
+	padding: 30px;
+	box-sizing: border-box;
+}
+
+.left-panel {
+	background: #929292;
+	border-radius: 20px;
+	padding: 30px 30px 20px 30px;
+	width: 50%;
+	min-width: 340px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-right: 30px;
+	box-sizing: border-box;
+	min-height: 700px;
+	border: #f70303 solid 2px;
+}
+
+.logo-title {
+	display: flex;
+	align-items: center;
+	margin-bottom: 30px;
+	border: #f70303 solid 2px;
+}
+
+.logo-img {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background: #fff;
+	padding: 10px;
+	margin-right: 20px;
+	box-sizing: border-box;
+}
+
+.logo-text {
+	color: #fff;
+	font-size: 2.5rem;
+	font-weight: bold;
+	border: #f70303 solid 2px;
+}
+
+.description {
+	color: #fff;
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-top: 10px;
+	border: #f70303 solid 2px;
+}
+/*RegisterContainer*/ /* */
+.right-panel {
+	background: #9b9b9c;
+	border-radius: 20px;
+	padding: 35px 40px 25px 40px;
+	width: 30%;
+	min-width: 370px;
+	border: #f70303 solid 2px;
+	left: -9%;
+	top: 20%;
+	position: relative;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.register-title {
+	color: #fff;
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 25px;
+	text-align: center;
+	border: #f70303 solid 2px;
+}
+
+.register-form {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px 15px;
+	justify-content: space-between;
+	margin-bottom: 20px;
+	border: 1px solid #f70303;
+}
+
+.register-form input {
+	width: 48%;
+	padding: 10px 12px;
+	border-radius: 8px;
+	border: none;
+	background: #f2f4f8;
+	font-size: 1rem;
+	margin-bottom: 0;
+	box-sizing: border-box;
+}
+
+.register-form input[type="password"] {
+	font-family: inherit;
+}
+
+.login-form-specific {
+	flex-direction: column; /* Stack items vertically */
+	flex-wrap: nowrap; /* Prevent items from wrapping */
+	justify-content: flex-start; /* Align items to the start of the main axis (vertical) */
+	gap: 15px 0; /* Apply only vertical gap between items */
+}
+
+.login-form-specific input {
+	width: 80%; /* Make inputs "a little long" */
+	height: 45px;
+	margin: 0 auto; /* Center inputs horizontally within the form */
+}
+
+.register-btn {
+	width: 50%;
+	position: relative;
+	left: 25%;
+	padding: 12px 0;
+	background: #2ee59d;
+	color: #fff;
+	border: none;
+	border-radius: 20px;
+	font-size: 1.1rem;
+	font-weight: bold;
+	cursor: pointer;
+	margin-top: 10px;
+	transition: background 0.2s;
+}
+
+.register-btn:hover {
+	background: #25c98a;
+}
+
+.login-link {
+	margin-top: 10px;
+	font-size: 0.95rem;
+	color: #fff;
+	text-align: center;
+	border: #f70303 solid 2px;
+}
+
+.login-link a {
+	color: #00ff99;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 0.95rem;
+}
+
+.login-link a:hover {
+	text-decoration: underline;
+}
+
+@media (max-width: 1400px) {
+	.register-form input,
+	.register-form input[type="date"] {
+		width: 100%;
+	}
+	.register-btn {
+		width: 50%; /* Make button full width */
+		left: 25%;
+	}
+}
+
+@media (max-width: 900px) {
+	.container {
+		flex-direction: column;
+		align-items: center;
+		padding: 10px;
+	}
+	.left-panel,
+	.right-panel {
+		width: 95%;
+		min-width: unset;
+		margin: 10px 0;
+	}
+	.right-panel {
+		left: 0; /* Reset left position for mobile */
+		top: 0; /* Reset top position for mobile */
+		position: static; /* Reset position for mobile */
+	}
+	.register-form {
+		flex-direction: column; /* Explicitly stack items vertically */
+		flex-wrap: nowrap; /* Prevent wrapping if not needed */
+		justify-content: flex-start; /* Align items to the start */
+		gap: 15px 0; /* Only vertical gap needed */
+	}
+	.register-form input,
+	.register-form input[type="date"] {
+		width: 100%; /* Make inputs full width in mobile view */
+	}
+	.register-btn {
+		width: 50%; /* Make button full width in mobile view */
+		left: 0; /* Reset left position for mobile */
+	}
+}
